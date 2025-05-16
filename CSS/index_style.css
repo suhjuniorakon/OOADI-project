@@ -4,8 +4,21 @@
     box-sizing: border-box;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
 .background-video {
-    position: fixed;
+    position:  relative;
     right: 0;
     bottom: 0;
     width: 100%;
@@ -16,6 +29,7 @@
 }
 
 .video-container {
+    flex: 2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +38,7 @@
 
 .navbar {
     max-width: 100%;
+    flex: 1;
     flex-wrap: wrap;
     height: 75px;
     display: flex;
@@ -91,17 +106,9 @@
     background: #FF5722; /* Deep Orange */
 }
 
-<!--.description {
-    background-color: #FAF3E0; /* Off-White */
-    margin: auto;
-    width: 50%;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-}-->
-
 .options-container {
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
@@ -109,6 +116,7 @@
     position: relative;
     margin-top: 20px;
     z-index: 1;
+    background-color: white;
 }
 
 .option {
@@ -157,6 +165,15 @@
 
 
 @media (max-width: 768px) {
+     .wrapper {
+        display: block;
+    }
+
+    .navbar, .video-container, .options-container {
+        height: auto;
+        flex: none;
+    }
+
     .navbar {
         flex-direction: column;
         text-align: center;
@@ -164,6 +181,12 @@
 
     .options-container {
         flex-direction: column;
+        gap: 15px;
         align-items: center;
+        background-size: contain; 
+    }
+
+    .option-btn {
+        width: 100%;
     }
 }
