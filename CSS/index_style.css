@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -37,21 +37,23 @@ body, html {
 }
 
 .navbar {
-    max-width: 100%;
+    max-width: 100%; 
+    width: 100vw;
+    top: 0;
     flex: 1;
     flex-wrap: wrap;
-    height: 75px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #FF5722; /* Deep Orange */
-    position: relative;
+    position: fixed;
 }
 
 .logo {
     width: 150px;
-    height: auto;
+    height: 65px;
 }
 
 .menu ul {
