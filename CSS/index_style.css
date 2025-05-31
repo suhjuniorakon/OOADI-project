@@ -1,194 +1,154 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --primary-color: #003366;     /* Dark Blue */
+  --accent-color: #FFA500;      /* Orange */
+  --background-color: #F9F9F9;  /* Light Beige */
+  --text-color: #222222;        /* Dark Gray */
+  --error-color: #cc0000;       /* Red */
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+/* Reset & Base */
+* {
+  box-sizing: border-box;
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
 }
 
-.background-video {
-    position:  relative;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    display: block;
+/* Container */
+.form-container {
+  background: var(--background-color);
+  max-width: 700px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.15);
+  padding: 2.5rem 3rem;
+  transition: background-color 0.3s ease;
 }
 
-.video-container {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.navbar {
-    max-width: 100%; 
-    width: 100vw;
-    top: 0;
-    flex: 1;
-    flex-wrap: wrap;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #FF5722; /* Deep Orange */
-    position: fixed;
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .logo {
-    width: 150px;
-    height: 65px;
+  max-height: 80px;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
 }
 
-.menu ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
+h1 {
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 2rem;
 }
 
-.menu ul li a {
-    text-decoration: none;
-    color: navy;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
+.guidance-message {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
-.menu ul li a:hover {
-    color: #FFD700; /* Golden Yellow */
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
 }
 
-.search {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
-.srch {
-    font-family: 'Times New Roman', serif;
-    width: 200px;
-    height: 30px;
-    background: transparent;
-    border: 1px solid #00796B;
-    color: #00796B;
-    font-size: 16px;
-    padding: 5px;
-    border-radius: 5px;
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1rem;
 }
 
-.btn {
-    width: 100px;
-    height: 40px;
-    background: #00796B; /* Teal */
-    border: none;
-    color: white;
-    font-size: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+input[type="text"],
+input[type="email"],
+select,
+input[type="file"] {
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn:hover {
-    background: #FF5722; /* Deep Orange */
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+input[type="file"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(0, 51, 102, 0.3);
+  outline: none;
 }
 
-.options-container {
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px;
-    position: relative;
-    margin-top: 20px;
-    z-index: 1;
-    background-color: white;
+.error-message {
+  display: none;
+  color: var(--error-color);
+  font-size: 0.9em;
+  margin-top: 0.3rem;
 }
 
-.option {
-    background-color: blue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-    width: 150px;
-    transition: transform 0.3s ease-in-out;
+/* Buttons */
+.btn-submit {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 16px;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.option:hover {
-    transform: translateY(-5px);
+.btn-submit:hover {
+  background: #d88c00;
+  box-shadow: 0 6px 16px rgba(0, 51, 102, 0.5);
 }
 
-.option-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-    color: #00796B; /* Teal */
+/* Submission message */
+.submission-message {
+  margin-top: 1em;
+  font-weight: bold;
+  color: green;
 }
 
-.option-text {
-    font-size: 16px;
-    color: white;
-}
-
-.option-btn {
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: Orange; /* Teal */
-    color: white;
-    font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.option-btn:hover {
-    background-color: #FF5722; /* Deep Orange */
-}
-
-
-@media (max-width: 768px) {
-     .wrapper {
-        display: block;
-    }
-
-    .navbar, .video-container, .options-container {
-        height: auto;
-        flex: none;
-    }
-
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .options-container {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        background-size: contain; 
-    }
-
-    .option-btn {
-        width: 100%;
-    }
+/* Responsive */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-container {
+    padding: 1rem 1rem;
+  }
+  .logo {
+    max-height: 60px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
 }
