@@ -1,0 +1,165 @@
+/* Styles for the student picture upload and info message */
+
+.photo-upload-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-upload-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.photo-upload-wrapper input[type="file"] {
+  flex-shrink: 0;
+}
+
+.photo-info-important {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+  color: red;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  line-height: 1.4;
+  max-width: 600px;
+  margin-top: 0.5rem;
+}
+
+.photo-info-important strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* Reset and base */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+/* Form container */
+.form-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  max-height: 80px;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #003366;
+  margin: 0;
+}
+
+/* Form grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #003366;
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+input[type="file"] {
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+input[type="file"]:focus {
+  border-color: #003366;
+  box-shadow: 0 0 8px rgba(0, 51, 102, 0.3);
+  outline: none;
+}
+
+.error-message {
+  display: none;
+  color: red;
+  font-size: 0.9em;
+  margin-top: 0.3rem;
+}
+
+/* Buttons */
+.btn-submit {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 16px;
+  background: #FFA500;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #d88c00;
+  box-shadow: 0 6px 16px rgba(0, 51, 102, 0.5);
+}
+
+/* Submission message */
+.submission-message {
+  margin-top: 1em;
+  font-weight: bold;
+  color: green;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-container {
+    padding: 1rem 1rem;
+  }
+  .logo {
+    max-height: 60px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
