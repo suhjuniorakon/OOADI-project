@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICTU Exam Pass Receipt</title>
+  <link rel="stylesheet" href="css/exam_pass.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script defer src="js/ExamPassFornReceipt.js"></script>
+</head>
+<body>
+  <main id="receiptCard" class="receipt-container">
+    <header class="receipt-header">
+      <img src="img/ictu-logo.png" alt="ICT University Logo" class="logo" />
+      <h1>ICT University Exam Pass</h1>
+      <h2 id="semesterTitle" class="semester-title"></h2>
+      <p class="subheading"><i>Authorized Exam Attendance Receipt</i></p>
+    </header>
+
+    <section class="student-info">
+      <div><strong>Name:</strong> <span id="studentName"></span></div>
+      <div><strong>Gender:</strong> <span id="studentGender"></span></div>
+      <div><strong>Faculty:</strong> <span id="studentFaculty"></span></div>
+      <div><strong>Matricule Number:</strong> <span id="studentMatric"></span></div>
+      <div><strong>Semester:</strong> <span id="studentSemester"></span></div>
+      <div><strong>Level:</strong> <span id="studentLevel"></span></div>
+      <div><strong>Payment Status:</strong> <span class="status-completed">Completed</span></div>
+      <div><strong>Date of Payment:</strong> <span id="paymentDate"></span></div>
+    </section>
+
+    <section class="qr-section">
+      <h2>Verification QR Code</h2>
+      <div id="qrcode"></div>
+      <p>Scan to verify this pass</p>
+    </section>
+
+    <button id="downloadBtn" class="btn-download" disabled>Download Exam Pass</button>
+  </main>
+</body>
+</html>

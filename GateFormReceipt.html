@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICTU Gate Pass Receipt</title>
+  <link rel="stylesheet" href="css/GatePass.css" />
+  <script src="js/GateFormReceipt.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <main class="receipt-container">
+    <header class="receipt-header">
+      <img src="img/ictu-logo.png" alt="ICT University Logo" class="logo" />
+      <h1>ICT University Gate Pass Receipt</h1>
+    </header>
+
+    <section class="student-info">
+      <div class="student-photo-wrapper">
+        <img src="" alt="Student Profile Picture" id="studentPhoto" class="student-photo" />
+      </div>
+
+      <div class="student-details">
+        <p><strong>Full Name:</strong> <span id="fullName"></span></p>
+        <p><strong>Gender:</strong> <span id="gender"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Faculty:</strong> <span id="faculty"></span></p>
+        <p><strong>Semester:</strong> <span id="semester" class="semester-label"></span></p>
+      </div>
+    </section>
+
+    <footer class="receipt-footer">
+      <p>Gate Pass generated on: <span id="generatedDate"></span></p>
+      <p>Please carry this pass and your student ID for verification at the gate.</p>
+    </footer>
+
+     <button id="downloadBtn" class="btn-download" disabled>Download Exam Pass</button>
+     
+  </main>
+
+</body>
+</html>
