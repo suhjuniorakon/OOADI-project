@@ -3,79 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pass Portal Design</title>
-  <link rel="stylesheet" href="CSS/index.css" />
-  <script defer src="JS/index.js"></script>
-  <!-- Font Awesome CDN for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-  />
+  <title>ICT University - Pass Portal</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  
-  <div class="wrapper">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="icon">
-        <img class="logo" src="img/ictu-logo.png" alt="ICT-U Logo" />
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <div class="language-switcher">
+          <a href="#" class="lang-flag" data-lang="en"><img src="img/flags/us.png" alt="English" /></a>
+          <a href="#" class="lang-flag" data-lang="fr"><img src="img/flags/fr.png" alt="Français" /></a>
+          <a href="#" class="lang-flag" data-lang="es"><img src="img/flags/cmr.png" alt="Cameroon" /></a>
+        </div>
+        <div class="contact-info">
+          <span><i class="fas fa-phone"></i> +237 678 76 40 37</span>
+          <span><i class="fab fa-whatsapp"></i> +237 678 76 40 37</span>
+        </div>
       </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-      <div class="menu">
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">SERVICE</a></li>
-           <li><a href="#">ABOUT</a></li>
-        </ul>
+      <div class="top-bar-right">
+        <nav class="utility-nav">
+          <a href="https://ictuniversity.org/portal-login/" target="_blank" rel="noopener noreferrer" id="utility-student-portal-link">
+            <i class="fa fa-laptop"></i> Student Portal</a>
+        </nav>
       </div>
-      <div class="search">
-        <input class="srch" type="search" placeholder="Type to search..." />
-        <button class="btn">Search</button>
-      </div>
-    </nav>
-
-  <!-- Background Video -->
-  <div class="video-container">
-    <video autoplay loop muted playsinline class="background-video">
-      <source src="IMAGE/video.mp4.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    </div>
   </div>
-</div>
-<!-- Main Content -->
 
-<div>
-    <main>
-      <section class="pass-portal-section">
-        <p class="welcome-message">
-          Welcome to the Pass Portal Platform — students can conveniently request their End-Of-Semester passes online after completing tuition and Student Union Government fee payments.
-        </p>
-        <div class="options-container">
-            <div class="option">
-                <div class="option-icon">📊</div>
-                <div class="option-text">Gate Pass</div>
-                <button onclick="openGatePassForm()" class="option-btn">Get Pass</button>
-            </div>
-            <div class="option">
-                <div class="option-icon">📚</div>
-                <div class="option-text">End Of Semester Pass</div>
-                <button onclick="openExamPassForm()" class="option-btn">Apply Now</button>
-            </div>
-        </div>  
-      </section>
-    </main>
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container">
+      <a href="/" class="brand">
+        <img src="img/ictu-logo.png" alt="ICT University Logo" />
+      </a>
 
-    <div id="success-message" class="success-message" style="display:none;"></div>
+      <nav class="main-nav">
+        <ul>
+          <li class="current-menu-item"><a href="#" id="nav-home">Home</a></li>
+          <li><a href="#services" id="nav-services">Student Services</a></li>
+          <li><a href="#about" id="nav-about">About</a></li>
+        </ul>
+      </nav>
 
-</div>
+      <div class="header-tools">
+        <div class="search-box">
+          <form action="/search">
+            <input type="text" placeholder="Search..." id="search-placeholder" />
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Language Switcher -->
+  <div id="language-switcher" aria-label="Language Switcher" role="navigation" title="Switch Language">
+    <img src="img/flags/us.png" alt="English" class="lang-flag" data-lang="en" />
+    <img src="img/flags/fr.png" alt="Français" class="lang-flag" data-lang="fr" />
+    <img src="img/flags/es.png" alt="Español" class="lang-flag" data-lang="es" />
+  </div>
+
+  <!-- Hero Section with Video -->
+  <section class="hero">
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="video.mp4.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 id="hero-title">The ICT University Pass Portal</h1>
+      <p id="hero-subtitle">Your Gateway to Seamless Academic Services</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section id="services" class="pass-portal-section">
+      <div class="container">
+
+        <h2 id="services-title" style="color: orange;"><i>Student Services</i></h2>
+<p class="welcome-message" id="welcome-message" style="font-style: italic;">
+  Welcome to the Pass Portal Platform <br> — Where student are eligible to request their End-Of-Semester passes online on completion of tuition and Student Union Government fee payments.
+</p>
+
+        
+
+        <div class="service-cards">
+          <div class="service-card">
+            <div class="card-icon"><i class="fas fa-door-open"></i></div>
+            <h3 id="gate-pass-title">Gate Pass</h3>
+            <p id="gate-pass-desc">Request temporary campus access passes</p>
+            <button class="btn-primary" onclick="openGatePassForm()" id="gate-pass-btn">Get Pass</button>
+          </div>
+
+          <div class="service-card">
+            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3 id="semester-pass-title">Semester Pass</h3>
+            <p id="semester-pass-desc">Apply for end-of-semester examination pass</p>
+            <button class="btn-primary" onclick="openExamPassForm()" id="semester-pass-btn">Apply Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <!-- Address & Logo Section -->
       <div class="footer-section address-section">
-        <img src="img/ictu-logo.png" alt="ICTU Logo" class="footer-logo" />
+        <img src="img/ict-u-logo-white.png" alt="ICTU Logo" class="footer-logo" />
         <p>
           <strong>P.O. Box 526</strong><br />
           1 Avenue Dispensaire Messassi<br />
@@ -83,38 +128,36 @@
         </p>
         <p>
           <span>Call/WhatsApp +237 651 060 049</span><br />
-          <a href="mailto:admin@ictuniversity.edu.cm"
-            >admin@ictuniversity.edu.cm</a
-          >
+          <a href="mailto:admin@ictuniversity.edu.cm" id="footer-email-link">admin@ictuniversity.edu.cm</a>
         </p>
         <div class="footer-divider"></div>
       </div>
 
       <!-- Locations Section -->
       <div class="footer-section">
-        <h3>Locations</h3>
-        <p>
+        <h3 id="footer-locations-title">Locations</h3>
+        <p id="footer-location-text">
           ICT-U Foundation USA<br />
           (Office of International Linkages)
         </p>
-        <p>
+        <p id="footer-location-address">
           17669 Willow Trail Drive,<br />
-          Baton Rouge, LA 70817, USA.<br />
-          <span
-            >+1 (225) 288-8883<br />
-            +237 678 76 40 37<br />
-            +234 901 579-1014</span
-          >
+          Baton Rouge, LA 70817, USA.
+        </p>
+        <p id="footer-location-phones">
+          +1 (225) 288-8883<br />
+          +237 678 76 40 37<br />
+          +234 901 579-1014
         </p>
         <div class="footer-divider"></div>
       </div>
 
       <!-- Quick Links Section -->
       <div class="footer-section">
-        <h3>Quick Links</h3>
+        <h3 id="footer-quick-links-title">Quick Links</h3>
         <ul>
           <li>
-            <a href="https://ictuniversity.org/portal-login/" target="_blank" rel="noopener noreferrer">
+            <a href="https://ictuniversity.org/portal-login/" target="_blank" rel="noopener noreferrer" id="footer-student-portal-link">
               <i class="fa fa-sign-in" aria-hidden="true"></i> Student Portal
             </a>
           </li>
@@ -122,38 +165,29 @@
         <div class="footer-divider"></div>
       </div>
     </div>
-
+</footer>
+<footer bottom>
     <div class="footer-bottom">
-      Copyright &copy; All Rights Reserved 2023,
-      <span style="color: #e97333"><strong>The ICT University</strong></span>
+      <span id="footer-copy">Copyright &copy; All Rights Reserved 2025,</span>
+      <span style="color: #e97333" id="footer-copy-org"><strong>The ICT University</strong></span>
       <div class="footer-social">
-        <a
-          href="https://www.facebook.com/theictuniversity"
-          target="_blank"
-          title="facebook"
-          ><i class="fa fa-facebook"></i
+        <a href="https://www.facebook.com/theictuniversity" target="_blank" title="facebook"
+          ><i class="fab fa-facebook"></i
         ></a>
-        <a
-          href="https://www.linkedin.com/company/the-ict-university/"
-          target="_blank"
-          title="linkedin"
-          ><i class="fa fa-linkedin"></i
+        <a href="https://www.linkedin.com/company/the-ict-university/" target="_blank" title="linkedin"
+          ><i class="fab fa-linkedin"></i
         ></a>
-        <a href="#" target="_blank" title="skype"><i class="fa fa-skype"></i></a>
-        <a
-          href="https://twitter.com/ICTUniversityUS"
-          target="_blank"
-          title="twitter"
-          ><i class="fa fa-twitter"></i
+        <a href="#" target="_blank" title="skype"><i class="fab fa-skype"></i></a>
+        <a href="https://twitter.com/ICTUniversityUS" target="_blank" title="twitter"
+          ><i class="fab fa-twitter"></i
         ></a>
-        <a
-          href="https://www.instagram.com/theictuniversity/"
-          target="_blank"
-          title="instagram"
-          ><i class="fa fa-instagram"></i
+        <a href="https://www.instagram.com/theictuniversity/" target="_blank" title="instagram"
+          ><i class="fab fa-instagram"></i
         ></a>
       </div>
     </div>
   </footer>
+
+  <script src="js/index.js"></script>
 </body>
 </html>
