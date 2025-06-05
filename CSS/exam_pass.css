@@ -1,12 +1,19 @@
+/* ==========================
+   :root - Color Variables
+   ========================== */
 :root {
-  --primary-color: #003366;     /* Dark Blue */
+  --primary-color: #003366;     /* Dark Blue - Fall Semester */
   --accent-color: #FFA500;      /* Orange */
   --background-color: #F9F9F9;  /* Light Beige */
   --text-color: #222222;        /* Dark Gray */
   --error-color: #cc0000;       /* Red */
+  --spring-color: #ffffff;      /* White - Spring Semester */
+  --summer-color: #0000ff;      /* Blue - Summer Semester */
 }
 
-/* Reset & Base */
+/* ==========================
+   Reset & Base Styles
+   ========================== */
 * {
   box-sizing: border-box;
 }
@@ -24,7 +31,10 @@ body {
   padding: 2rem;
 }
 
-/* Container */
+
+/* ==========================
+   Form Container & Layout
+   ========================== */
 .form-container {
   background: var(--background-color);
   max-width: 700px;
@@ -102,6 +112,7 @@ input[type="file"]:focus {
   outline: none;
 }
 
+/* Error messages */
 .error-message {
   display: none;
   color: var(--error-color);
@@ -109,7 +120,7 @@ input[type="file"]:focus {
   margin-top: 0.3rem;
 }
 
-/* Buttons */
+/* Submit Button */
 .btn-submit {
   margin-top: 2rem;
   width: 100%;
@@ -137,7 +148,203 @@ input[type="file"]:focus {
   color: green;
 }
 
-/* Responsive */
+
+/* ==========================
+   Confirmation Page Styles
+   ========================== */
+.confirmation-container {
+  max-width: 420px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(39,48,120,0.15);
+  padding: 32px 28px 24px 28px;
+  text-align: center;
+  position: relative;
+}
+
+.confirmation-container header {
+  margin-bottom: 24px;
+}
+
+.confirmation-container .logo {
+  width: 80px;
+  margin-bottom: 12px;
+}
+
+.confirmation-container h1 {
+  font-size: 2rem;
+  color: #273078;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.confirmation-message {
+  background: #e8f0fe;
+  color: #273078;
+  border-radius: 8px;
+  padding: 22px 16px;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 6px rgba(39,48,120,0.05);
+}
+
+.confirmation-message a {
+  color: #f6bd52;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.confirmation-message a:hover {
+  color: #273078;
+  text-decoration: underline;
+}
+
+#backHomeBtn {
+  background: linear-gradient(90deg, #273078 60%, #f6bd52 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(39,48,120,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+
+#backHomeBtn:hover {
+  background: linear-gradient(90deg, #f6bd52 60%, #273078 100%);
+  color: #273078;
+}
+
+/* ==========================
+   Exam Pass Receipt Styles
+   ========================== */
+.receipt-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 51, 102, 0.15);
+  padding: 2rem 2.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+.receipt-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.receipt-header .logo {
+  max-height: 80px;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+}
+
+.receipt-header h1 {
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.semester-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Student Info Section */
+.student-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 2rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.student-info div {
+  font-weight: 600;
+}
+
+/* Payment Status */
+.status-completed {
+  color: green;
+  font-weight: 700;
+}
+
+/* QR Section */
+.qr-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.qr-section h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+#qrcode {
+  margin: 0 auto;
+  width: 160px;
+  height: 160px;
+}
+
+/* Download Button */
+.btn-download {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+  transition: background 0.3s ease;
+}
+
+.btn-download:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.btn-download:hover:not(:disabled) {
+  background: #001f4d;
+}
+
+/* ==========================
+   Semester-based Pass Colors
+   ========================== */
+
+/* Fall Semester - default primary color */
+.receipt-container.fall {
+  border-top: 6px solid var(--primary-color);
+}
+
+/* Spring Semester - white border top */
+.receipt-container.spring {
+  border-top: 6px solid var(--spring-color);
+  background-color: #fff;    /* white background */
+  color: var(--text-color);
+}
+
+/* Summer Semester - blue border top */
+.receipt-container.summer {
+  border-top: 6px solid var(--summer-color);
+  background-color: #e6f0ff; /* Light blue background */
+  color: var(--text-color);
+}
+
+/* ==========================
+   Responsive Styles
+   ========================== */
 @media (max-width: 600px) {
   .form-grid {
     grid-template-columns: 1fr;
@@ -150,5 +357,8 @@ input[type="file"]:focus {
   }
   h1 {
     font-size: 1.5rem;
+  }
+  .student-info {
+    grid-template-columns: 1fr;
   }
 }
